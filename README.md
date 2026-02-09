@@ -6,6 +6,6 @@
     <title>Merictopac Site</title>
   </head>
   <body>
-    <h1>Merhaba Dünya</h1>
+    <h1>Merhaba</h1>
   </body>
 </html>
