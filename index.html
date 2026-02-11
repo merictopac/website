@@ -1,108 +1,236 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Meriç Topaç - Kişisel Site</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      background: #f4f4f9;
-      color: #333;
-    }
-    header {
-      background: #2c3e50;
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
-    }
-    header p {
-      margin-top: 10px;
-      font-size: 1.2em;
-      color: #bdc3c7;
-    }
-    nav {
-      margin-top: 20px;
-    }
-    nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: #ecf0f1;
-      font-weight: bold;
-    }
-    nav a:hover {
-      color: #1abc9c;
-    }
-    section {
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-    section h2 {
-      border-bottom: 2px solid #1abc9c;
-      padding-bottom: 10px;
-      margin-bottom: 20px;
-      color: #2c3e50;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    ul li {
-      background: #ecf0f1;
-      margin: 10px 0;
-      padding: 15px;
-      border-radius: 5px;
-    }
-    footer {
-      background: #2c3e50;
-      color: #bdc3c7;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-    }
-    a.social {
-      color: #1abc9c;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    a.social:hover {
-      text-decoration: underline;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        a:hover {
+            color: #0056b3;
+        }
+
+        /* Header */
+        header {
+            background-color: #fff;
+            padding: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .blog-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+        nav ul li {
+            margin-left: 1rem;
+        }
+
+        /* Main layout */
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 2rem;
+        }
+        main {
+            background-color: #fff;
+            padding: 1rem;
+            border-radius: 5px;
+        }
+        aside {
+            background-color: #fff;
+            padding: 1rem;
+            border-radius: 5px;
+        }
+
+        /* Blog posts */
+        .post {
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 1rem;
+        }
+        .post img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 0.5rem;
+        }
+        .post h2 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+        .post-date {
+            color: #666;
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+        }
+        .post-description {
+            color: #555;
+        }
+
+        /* Sidebar */
+        .sidebar-section {
+            margin-bottom: 1.5rem;
+        }
+        .sidebar-section h3 {
+            font-size: 1.125rem;
+            margin-bottom: 0.5rem;
+        }
+        .categories ul {
+            list-style: none;
+        }
+        .categories ul li {
+            margin-bottom: 0.25rem;
+        }
+        .social-links ul {
+            list-style: none;
+            display: flex;
+        }
+        .social-links ul li {
+            margin-right: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .quick-links ul {
+            list-style: none;
+            display: flex;
+        }
+        .quick-links ul li {
+            margin-left: 1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            nav ul {
+                margin-top: 1rem;
+            }
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .quick-links ul {
+                margin-top: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Meriç Topaç</h1>
-    <p>IT Öğrencisi • Teknoloji ve Medya Meraklısı</p>
-    <nav>
-      <a href="#hakkimda">Hakkımda</a>
-      <a href="#projeler">Projeler</a>
-      <a href="#iletisim">İletişim</a>
-    </nav>
-  </header>
+    <header>
+        <div class="header-container">
+            <h1 class="blog-title">My Blog</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-  <section id="hakkimda">
-    <h2>Hakkımda</h2>
-    <p>Ben Meriç, İstanbul’da lise IT öğrencisiyim. DNS ve domain yönetimi, cihaz optimizasyonu ve medya markası geliştirme üzerine çalışıyorum. 
-    Teknolojiye olan ilgim sayesinde hem okulda hem de kişisel projelerimde aktif rol alıyorum. 
-    Amacım, yaptığım işleri sergileyerek hem kendime bir dijital vitrin oluşturmak hem de başkalarına ilham vermek.</p>
-  </section>
+    <div class="main-container">
+        <main>
+            <article class="post">
+                <img src="https://via.placeholder.com/600x300?text=Blog+Image+1" alt="Blog Post Image 1">
+                <h2>Sample Blog Post Title 1</h2>
+                <p class="post-date">October 1, 2023</p>
+                <p class="post-description">This is a short description of the first blog post. It provides a brief overview of the content.</p>
+            </article>
+            <article class="post">
+                <img src="https://via.placeholder.com/600x300?text=Blog+Image+2" alt="Blog Post Image 2">
+                <h2>Sample Blog Post Title 2</h2>
+                <p class="post-date">September 25, 2023</p>
+                <p class="post-description">This is a short description of the second blog post. It provides a brief overview of the content.</p>
+            </article>
+            <article class="post">
+                <img src="https://via.placeholder.com/600x300?text=Blog+Image+3" alt="Blog Post Image 3">
+                <h2>Sample Blog Post Title 3</h2>
+                <p class="post-date">September 20, 2023</p>
+                <p class="post-description">This is a short description of the third blog post. It provides a brief overview of the content.</p>
+            </article>
+        </main>
 
-  <section id="projeler">
-    <h2>Projeler</h2>
-    <ul>
-      <li><strong>GitHub Pages Yayını:</strong> Kendi domainimle HTTPS üzerinden güvenli site yayını yaptım.</li>
-      <li><strong>DNS Altyapısı:</strong> A Record, CNAME ve TTL ayarlarını doğru şekilde yapılandırarak hata ayıklama sürecini tamamladım.</li>
-      <li><strong>M-Rich Medya Markası:</strong> Global uyumlu, ajans havasında bir teknoloji haber kanalı için marka kimliği çalışmaları yaptım.</li>
-    </ul>
-  </section>
+        <aside>
+            <div class="sidebar-section categories">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="#">Technology</a></li>
+                    <li><a href="#">Lifestyle</a></li>
+                    <li><a href="#">Travel</a></li>
+                    <li><a href="#">Food</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-section social-links">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
 
-  <section id="iletisim">
-    <h2>İletişim</h2>
-    <p>LinkedIn: <a class="social" href="https://www.linkedin.com/in/meric-topac" target="_blank">linkedin.com/in/meric-topac</a></p>
-    <p>Email: <a class="social" href="mailto:merictopac@example.com">
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2023 My Blog. All rights reserved.</p>
+            <nav class="quick-links">
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Sitemap</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>
